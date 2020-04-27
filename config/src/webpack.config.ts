@@ -1,7 +1,8 @@
-import { Configuration } from 'webpack';
 import * as CopyWebpackPlugin from 'copy-webpack-plugin';
-
+import * as MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import * as pathHelpers from 'path';
+import * as TreatPlugin from 'treat/webpack-plugin';
+import { Configuration } from 'webpack';
 
 // Expect `__dirname` to be `/config/target/`.
 const ROOT_PATH = pathHelpers.resolve(__dirname, '..', '..');
@@ -41,6 +42,11 @@ const config: Configuration = {
                 to: 'index.html',
             },
         ]),
+
+        new TreatPlugin({
+            outputLoaders: [MiniCssExtractPlugin.loader],
+        }),
+        new MiniCssExtractPlugin(),
     ],
 };
 

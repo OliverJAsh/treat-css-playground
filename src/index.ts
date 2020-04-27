@@ -1,2 +1,6 @@
-export const add = (a: number, b: number): number => a + b;
-console.log(add(1, 2));
+import * as styles from './index.treat';
+
+const div = document.createElement('div');
+div.className = styles.button;
+
+document.body.appendChild(div);

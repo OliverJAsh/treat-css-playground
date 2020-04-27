@@ -8,5 +8,5 @@
         "outDir": "./target/",
         "rootDir": "./src/"
     },
-    "files": ["./src/webpack.config.ts"]
+    "files": ["./src/webpack.config.ts", "./src/modules.d.ts"]
 }
